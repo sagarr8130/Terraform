@@ -16,6 +16,10 @@ resource "google_compute_disk" "disk" {
   }
 }
 
+# output is used here for return value
+output "disk" {
+  value = google_compute_disk.disk
+}
 
 resource "google_compute_network" "vpc" {
   name = "private-vpc"
@@ -80,4 +84,3 @@ resource "google_compute_instance" "Compute_Engine" {
    }
   }
 }
-
