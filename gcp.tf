@@ -17,7 +17,7 @@ resource "google_compute_disk" "disk" {
 }
 
 # output is used here for return value
-output "disk" {
+output "disk_output" {
   value = google_compute_disk.disk
 }
 
