@@ -16,10 +16,18 @@ resource "google_compute_disk" "disk" {
   }
 }
 
+output "disk" {
+  value = google_compute_disk.disk.creation_timestamp
+}
+
 
 resource "google_compute_network" "vpc" {
   name = "private-vpc"
   auto_create_subnetworks = false
+}
+
+output "network" {
+  value = google_compute_network.vpc.id
 }
 
 resource "google_compute_subnetwork" "new-subnet" {
@@ -28,6 +36,10 @@ resource "google_compute_subnetwork" "new-subnet" {
   ip_cidr_range = "10.130.0.0/20"
   network = google_compute_network.vpc.self_link
   private_ip_google_access = false
+}
+
+output "subnetwork" {
+  value = google_compute_subnetwork.new-subnet.fingerprint
 }
 
 resource "google_compute_firewall" "fwl" {
@@ -41,6 +53,10 @@ resource "google_compute_firewall" "fwl" {
   }
   source_tags = ["allow-tcp-8080"]
   source_ranges = ["0.0.0.0/0"]
+}
+
+output "firewall" {
+  value = google_compute_firewall.fwl.id
 }
 
 resource "google_compute_instance" "Compute_Engine" {
@@ -79,4 +95,8 @@ resource "google_compute_instance" "Compute_Engine" {
       nat_ip = ""
    }
   }
+}
+
+output "instance" {
+  value = google_compute_instance.Compute_Engine.instance_id
 }
