@@ -6,19 +6,19 @@ Intent to Folder -
 And make sure to add service account credential `(JSON)` format at the same location.
 
 
-Structure before `terraform apply`
+File Structure
 
 ```bash
 [root@localhost ~]# tree
 .
 ├── account.json
+├── Network
+│   ├── backend.tf        #Pushing state file to bucket
+│   ├── output.tf       #Retrieves state data from a Terraform backend.
+│   └── main.tf           #
 ├── Instance
-│   ├── backend.tf
+│   ├── backend.tf      #Pushing state file to bucket
 │   ├── data_get.tf
 │   └── main.tf
-├── Network
-│   ├── backend.tf
-│   ├── main.tf
-│   └── output.tf
 
 ```
