@@ -2,7 +2,7 @@
 
 Intent to Folder - 
 
-`var.tf` consist all variable blocks which is being consumed by `main.tf` configuration. 
+Provisioning Infra by using variables
 
 Structure before `terraform apply`
 
