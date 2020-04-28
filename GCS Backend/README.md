@@ -7,7 +7,7 @@ POC to provision network and instance from different servers/location.
 1) Make sure to add service account
 2) Make a bucket and use that bucket name in terraform file
 
-File Structure
+
 
 ```bash
 [root@localhost ~]# tree
