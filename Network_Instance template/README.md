@@ -10,9 +10,9 @@ Structure before `terraform apply`
 ```bash
 [root@localhost ~]# tree
 .
-├── account.json
-├── main.tf
-├── output.tf
+├── account.json            # GCP Service Account
+├── main.tf                 # Network & GCP Instance Configuration
+├── output.tf               # To extract the value of an output variable from the state file
 ```
 Structure after `terraform apply`
 
