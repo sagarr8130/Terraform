@@ -2,9 +2,10 @@
 
 Intent to Folder - 
 
-`main.tf` consist all network and instance configuration, whereas `output.tf` consist all output blocks is used to extract the value of an output variable from the state file. 
-And make sure to add service account credential `(JSON)` format at the same location.
+POC to provision network and instance from different servers/location.  
 
+1) Make sure to add service account
+2) Make a bucket and use that bucket name in terraform file
 
 File Structure
 
@@ -13,12 +14,12 @@ File Structure
 .
 ├── account.json
 ├── Network
-│   ├── backend.tf        #Pushing state file to bucket
-│   ├── output.tf       #Retrieves state data from a Terraform backend.
-│   └── main.tf           #
+│   ├── backend.tf        # Pushing state file (network.tfstate) to bucket
+│   ├── output.tf         # To extract the value of an output variable from the state file (network.tfstate)
+│   └── main.tf           # Network Configuration
 ├── Instance
-│   ├── backend.tf      #Pushing state file to bucket
-│   ├── data_get.tf
-│   └── main.tf
+│   ├── backend.tf        # Pushing state file (instance.tfstate) to bucket
+│   ├── data_get.tf       # Retrieves state data from a Terraform backend state file (network.tfstate)
+│   └── main.tf           # GCP Instance Configuration
 
 ```
