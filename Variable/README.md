@@ -10,9 +10,9 @@ Structure before `terraform apply`
 [root@localhost ~]# tree
 .
 ├── account.json
-├── main.tf
-├── output.tf
-├── var.tf
+├── main.tf               # Configuration file consuming variables from var.tf 
+├── output.tf             # To extract the value of an output variable from the state file
+├── var.tf                # Variable blocks
 
 ```
 Structure after `terraform apply`
