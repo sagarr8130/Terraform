@@ -2,7 +2,7 @@
 
 Intent to Folder - 
 
-Two `main.tf` at different locations referring to instance configuration and module configuration. And, Make sure to add `account.json` at module template location `(/root/Modules)` from where `terraform apply` will run.
+We can place account.json anywhere, but path should be define in required terraform file.
 
 Structure before `terraform apply`
 
@@ -10,11 +10,11 @@ Structure before `terraform apply`
 [root@localhost ~]# tree
 .
 ├── Instance
-│   ├── main.tf
-│   └── var.tf
+│   ├── main.tf               # Instance Configuration consuming variables from var.tf 
+│   └── var.tf                # Variable blocks
 ├── Modules
-│   ├── account.json
-│   ├── main.tf
+│   ├── account.json          # Service Account
+│   ├── main.tf               # Module Configuration which is calling main.tf from Instance dir (/root/Instance/main.tf)
 
 
 ```
