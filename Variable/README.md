@@ -1,6 +1,6 @@
 # Terraform_Template_Using_Variable
 
-Intent to Folder - `var.tf` consist all variable blocks which is consumed by `main.tf` configuration. 
+Intent to Folder - `var.tf` consist all variable blocks which is being consumed by `main.tf` configuration. 
 
 Structure before `terraform apply`
 
