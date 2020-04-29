@@ -19,7 +19,7 @@ POC to provision network and instance from different servers/location.
 │   ├── output.tf         # To extract the value of an output variable from the state file (network.tfstate)
 │   └── main.tf           # Network Configuration
 ├── Instance
-│   ├── backend.tf        # Pushing state file (instance.tfstate) to bucket
+│   ├── backend.tf        # Pushing state file (instance.tfstate) to bucket. This is option file, if we want to keep state file remotely.
 │   ├── data_get.tf       # Retrieves state data from a Terraform backend state file (network.tfstate)
 │   └── main.tf           # GCP Instance Configuration
 
